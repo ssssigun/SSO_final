@@ -29,7 +29,7 @@ public class APIUserDetailsService implements UserDetailsService {
 		APIUser apiUser = result.orElseThrow(()->new UsernameNotFoundException("회원이 존재하지 않습니다."));
 		
 		log.info("APIUserDetailsService");
-		APIUserDTO dto = new APIUserDTO(apiUser.getMid(), apiUser.getMpw(), List.of(new SimpleGrantedAuthority("ROLE_USER")));
+		APIUserDTO dto = new APIUserDTO(apiUser.getId(), apiUser.getPwd(), List.of(new SimpleGrantedAuthority("ROLE_USER")));
 		log.info(dto.toString());
 		return dto;
 	}

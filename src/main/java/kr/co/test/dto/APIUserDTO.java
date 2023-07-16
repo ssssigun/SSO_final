@@ -13,12 +13,12 @@ import lombok.ToString;
 @Setter
 @ToString
 public class APIUserDTO extends User {
-	private String mid;
-	private String mpw;
+	private String id;
+	private String pwd;
 	
 	public APIUserDTO(String username, String password, Collection<? extends GrantedAuthority> authorities) {
 		super(username, password, authorities);
-		this.mid = username;
-		this.mpw = password;
+		this.id = username;
+		this.pwd = password;
 	}
 }

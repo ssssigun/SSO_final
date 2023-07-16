@@ -32,7 +32,7 @@ public class APILoginFilter extends AbstractAuthenticationProcessingFilter {
 		
 		// 인증처리
 		UsernamePasswordAuthenticationToken authenticationToken 
-			= new UsernamePasswordAuthenticationToken(json.get("mid"), json.get("mpw"));
+			= new UsernamePasswordAuthenticationToken(json.get("id"), json.get("pwd"));
 		
 		return getAuthenticationManager().authenticate(authenticationToken);
 	}

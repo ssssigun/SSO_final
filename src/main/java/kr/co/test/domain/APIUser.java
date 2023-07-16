@@ -16,11 +16,15 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 public class APIUser {
+	private int user_pk;
 	@Id
-	private String mid;
-	private String mpw;
+	private String id;
+	private String pwd;
+	private String creditcardnumber;
+	private String name;
+	private String email;
 	
-	public void changePw(String mpw) {
-		this.mpw = mpw;
+	public void changePw(String pwd) {
+		this.pwd = pwd;
 	}
 }
