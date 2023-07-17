@@ -19,14 +19,14 @@ public class APIUserRepositoryTests {
 	@Autowired
 	private APIUserRepository apiUserRepository;
 	
-	@Test
-	public void testInserts() {
-		IntStream.rangeClosed(1,100).forEach(i -> {
-			APIUser apiUser = APIUser.builder()
-					.mid("apiuser"+i)
-					.mpw(passwordEncoder.encode("1111"))
-					.build();
-			apiUserRepository.save(apiUser);
-		});
-	}
+//	@Test
+//	public void testInserts() {
+//		IntStream.rangeClosed(1,100).forEach(i -> {
+//			APIUser apiUser = APIUser.builder()
+//					.mid("apiuser"+i)
+//					.mpw(passwordEncoder.encode("1111"))
+//					.build();
+//			apiUserRepository.save(apiUser);
+//		});
+//	}
 }

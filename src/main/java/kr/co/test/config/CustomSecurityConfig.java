@@ -97,7 +97,7 @@ public class CustomSecurityConfig {
 	@Bean
 	public CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration config = new CorsConfiguration();
-		config.setAllowedOriginPatterns(Arrays.asList("http://172.19.48.1:5500"));
+		config.setAllowedOriginPatterns(Arrays.asList("http://localhost","http://localhost:8000"));
 		config.setAllowedMethods(Arrays.asList("GET","POST"));
 		config.setAllowedHeaders(Arrays.asList("Authorization", "Cache-Control","Content-Type"));
 		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
