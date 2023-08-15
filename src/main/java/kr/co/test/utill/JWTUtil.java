@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
@@ -33,8 +34,8 @@ public class JWTUtil {
 		payloads.putAll(valueMap);
 		
 		// 유효기간
-//		int time = 1 * 60 * days; // 1일
-		int time = 1 * days; // 1분
+		int time = 1 * 60 * days; // 1일
+//		int time = 1 * days; // 1분
 		
 		String jwtStr = Jwts.builder()
 				.setHeader(headers)
@@ -50,7 +51,7 @@ public class JWTUtil {
 	// 토큰 검증
 	public Map<String, Object> validateToken(String token) throws JwtException {
 		Map<String, Object> claim = null;
-		
+		System.out.println(key);
 		claim = Jwts.parser()
 				.setSigningKey(key.getBytes())
 				.parseClaimsJws(token)
@@ -58,4 +59,5 @@ public class JWTUtil {
 		
 		return claim;
 	}
+	
 }
